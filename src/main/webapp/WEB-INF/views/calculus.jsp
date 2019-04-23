@@ -10,18 +10,22 @@
     <meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
     <script src="/resources/scripts/generate-calculus.js"></script>
-    <style rel="stylesheet" href="/resources/stylesheets/global.css"></style>
-    <style rel="stylesheet" href="/resources/stylesheets/calculus.css"></style>
+    <script src="/resources/scripts/result.js"></script>
+    <link rel="stylesheet" href="/resources/stylesheets/calculus.css" type="text/css"></link>
+    <link rel="stylesheet" href="/resources/stylesheets/global.css" type="text/css"></link>
     <title>Calculus</title>
 </head>
 
 <body>
 
-    <div id="calculus" style="visibility: hidden;">
-        <p id="calcul"></p>
+    <div class="calcule">
+        <div id="calculus">
+            <p id="calcul"></p>
+            <input name="result" type="text" placeholder="Result">
+            <button onclick="send()">Submit</button>
+        </div>
+        <button onclick="generate()">Give me some' man</button>
     </div>
-    <button onclick="generate()">Give me some' man</button>
-
 </body>
 
 </html>

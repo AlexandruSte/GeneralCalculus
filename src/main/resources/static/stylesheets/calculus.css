@@ -1,3 +1,22 @@
+.calcule{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#calculus {
+    visibility: hidden;
+}
+
 #calcul {
-    font-size: 200%;
+    font-size: 400%;
+}
+
+button {
+    font-size: 120%;
+    padding: 5px 10px;
+    /* text-decoration: none; */
+    background-color: transparent;
+    border-style: solid;
+    border-color: #90CAF9;
 }
