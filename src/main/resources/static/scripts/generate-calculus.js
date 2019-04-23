@@ -1,5 +1,6 @@
 var user_results = [];
 var actual_results = [];
+var calculations = 0;
 
 function generate(){
     div = document.getElementById("calculus");
@@ -9,13 +10,40 @@ function generate(){
     var max=50;
     var x =Math.floor(Math.random() * (+max - +min)) + +min;
     var y =Math.floor(Math.random() * (+max - +min)) + +min;
-    actual_results.push(x*y);
+    var result = x*y;
+    actual_results.push('' + result);
+    calculations++;
     s = y + ' x ' + x;
     p.innerHTML = s;
 }
 
 function send(){
-    var result = document.getElementsByTagName("input")[0].value;
-    user_results.push(result);
+    var input_tag = document.getElementsByTagName("input");
+    var result = '' + input_tag[0].value;
+    input_tag[0].value = '';
+    if(result.length == 0)
+        user_results.push('0');
+    else
+        user_results.push(result);
+    if(calculations<4) {
+        generate();
+    }
+    else{
+        div = document.getElementById("calculus");
+        div.style.visibility = "hidden";
+
+        $.ajax({
+            type : "POST",
+            url : "/results",
+            data : {
+                myArray: user_results,
+                myArray1: actual_results//notice that "myArray" matches the value for @RequestParam
+                           //on the Java side
+            },
+            error : function(e) {
+                alert('Error: ' + e);
+            }
+        });
+    }
     console.log(result)
 }
