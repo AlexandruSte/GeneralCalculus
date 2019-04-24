@@ -20,7 +20,7 @@
 </head>
 
 <body>
-
+    <jsp:include page="static/navigator.jsp"></jsp:include>
     <div class="calcule">
         <div id="calculus">
             <p id="calcul"></p>

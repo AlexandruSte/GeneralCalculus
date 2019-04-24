@@ -18,6 +18,7 @@
     <title>Results</title>
 </head>
 <body>
+    <jsp:include page="static/navigator.jsp"></jsp:include>
     <c:choose>
         <c:when test="${ok=='1'}">
             <p>Congratulations, you did ${correct} correct responses from ${responses} questions!</p>
