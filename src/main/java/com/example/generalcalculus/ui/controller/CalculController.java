@@ -5,7 +5,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-//@RequestMapping("/")
+//@RequestMapping("")
 public class CalculController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -13,10 +13,11 @@ public class CalculController {
         return "calculus";
     }
 
-    @RequestMapping(value = "/results", method = RequestMethod.POST)
-    @ResponseBody
+    @RequestMapping(value = "/results", method = {RequestMethod.POST, RequestMethod.GET})
+    //@ResponseBody
     public String controllerMethod(@RequestParam(value="myArray[]") String[] myArray,
                                    @RequestParam(value="myArray1[]") String[] myArray1,
+                                   //@RequestParam(value="v") Integer x,
                                    ModelMap model){
         int correctValues = 0;
         for(int i=0; i<myArray.length;i++)
@@ -25,7 +26,7 @@ public class CalculController {
         model.addAttribute("correct",correctValues);
         model.addAttribute("responses",myArray.length);
 
-        return "redirect:/success";
+        return "/success";
     }
 
     @RequestMapping(value = "/success", method = RequestMethod.GET)
