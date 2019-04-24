@@ -6,6 +6,10 @@ function generate(){
     div = document.getElementById("calculus");
     p = document.getElementById("calcul")
     div.style.visibility = "visible";
+
+    btn = document.getElementById("genBtn");
+    btn.style.visibility = "hidden";
+
     var min=10;
     var max=50;
     var x =Math.floor(Math.random() * (+max - +min)) + +min;
@@ -37,8 +41,11 @@ function send(){
             url : "/results",
             data : {
                 myArray: user_results,
-                myArray1: actual_results//notice that "myArray" matches the value for @RequestParam
-                           //on the Java side
+                myArray1: actual_results
+            },
+            success: function(data){
+                console.log(data);
+                window.location.href = "/success";
             },
             error : function(e) {
                 alert('Error: ' + e);
