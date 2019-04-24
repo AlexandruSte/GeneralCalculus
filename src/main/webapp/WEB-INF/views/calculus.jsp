@@ -22,13 +22,24 @@
 <body>
     <jsp:include page="static/navigator.jsp"></jsp:include>
     <div class="calcule">
+
         <div id="calculus">
             <p id="calcul"></p>
-            <input name="result" type="text" placeholder="Result">
+            <input name="result" type="text" placeholder="Result" />
             <button id="submitBtn" onclick="send()">Submit</button>
         </div>
-        <button id="genBtn" onclick="generate()">Give me some' man</button>
+
+        <div id="generation">
+            <select id="operationType">
+                <option value="addition">Additions</option>
+                <option value="subtraction">Subtractions</option>
+                <option value="multiplication" selected>Multiplications</option>
+                <option value="division">Divisions</option>
+            </select>
+            <button onclick="start()">Give me some' man</button>
+        </div>
     </div>
+    <jsp:include page="static/footer.jsp"></jsp:include>
 </body>
 
 </html>

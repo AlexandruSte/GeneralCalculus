@@ -31,5 +31,7 @@
     </c:choose>
 
     <p>Let's go back and resolve some more!<a href="/">Go</a></p>
+
+    <jsp:include page="static/footer.jsp"></jsp:include>
 </body>
 </html>

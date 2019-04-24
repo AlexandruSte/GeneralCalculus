@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <header>
-    <img id="logo" src="/resources/img/logo.png" alt="logo"/>
+    <a href="/"><img id="logo" src="/resources/img/logo.png" alt="logo"/></a>
 
     <nav>
         <a href="#">Login</a>

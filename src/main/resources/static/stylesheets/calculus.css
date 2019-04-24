@@ -1,7 +1,35 @@
+button {
+    font-size: 140%;
+    padding: 5px 10px;
+    background-color: transparent;
+    border-style: solid;
+    border-color: #81D4FA;
+}
+
+input {
+    height: 40px;
+    text-align: center;
+    width: 120px;
+    font-size: 120%;
+}
+
+select{
+    display: block;
+    text-align: right;
+    margin: 0 auto;
+    margin-bottom: 2%;
+    width: 190px;
+    text-align-last: center;
+    height: 35px;
+    font-size: 20px;
+    border-color: #BBDEFB;
+}
+
 .calcule {
     width: 70%;
     margin: 0 auto;
     text-align: center;
+    margin-top: 150px;
 }
 
 #calculus {
@@ -9,21 +37,5 @@
 }
 
 #calcul {
-    font-size: 400%;
-}
-
-button {
-    font-size: 120%;
-    padding: 5px 10px;
-    /* text-decoration: none; */
-    background-color: transparent;
-    border-style: solid;
-    border-color: #90CAF9;
-}
-
-input {
-    height: 40px;
-    text-align: center;
-    width: 90px;
-    font-size: 120%;
+    font-size: 500%;
 }

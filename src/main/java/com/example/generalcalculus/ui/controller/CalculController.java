@@ -26,7 +26,7 @@ public class CalculController {
             if(myArray[i].equals(myArray1[i]))
                 correctValues++;
         correct = correctValues;
-        total = myArray.length + 1;
+        total = myArray.length;
         modified = true;
         return "success";
     }
