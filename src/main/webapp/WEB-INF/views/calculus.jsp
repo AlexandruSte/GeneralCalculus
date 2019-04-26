@@ -25,8 +25,7 @@
 
         <div id="calculus">
             <p id="calcul"></p>
-            <input name="result" type="text" placeholder="Result" />
-            <button id="submitBtn" onclick="send()">Submit</button>
+            <input name="result" type="text" placeholder="Result" onKeyPress="enterpressalert(event)" />
         </div>
 
         <div id="generation">

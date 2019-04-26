@@ -4,6 +4,8 @@ var calculations = 0;
 var sign = '';
 
 function start(){
+    //aici voi incepe numaratul secundelor
+
     var div = document.getElementById("calculus");
     div.style.visibility = "visible";
 
@@ -55,7 +57,7 @@ function generate(){
 
     actual_results.push('' + result);
     calculations++;
-    var s = y + ' ' + sign + ' ' + x;
+    var s = x + ' ' + sign + ' ' + y;
     var p = document.getElementById("calcul")
     p.innerHTML = s;
 }
@@ -74,6 +76,8 @@ function send(){
         generate();
     }
     else{
+        //trebuie sa opresc timerul
+
         div = document.getElementById("calculus");
         div.style.visibility = "hidden";
 
@@ -83,6 +87,7 @@ function send(){
             data : {
                 myArray: user_results,
                 myArray1: actual_results
+                //trebuie sa adaug float cu nr de secunde
             },
             success: function(data){
                 console.log(data);
@@ -94,4 +99,12 @@ function send(){
         });
     }
     console.log(result)
+}
+
+function enterpressalert(e){
+    console.log(22);
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if(code == 13) {
+        send();
+    }
 }
