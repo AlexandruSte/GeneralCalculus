@@ -33,7 +33,7 @@
             </ul>
         </aside>
 
-        <p id="yes">Salut</p>
+        <div id="tables"></div>
 
         <!--<div id="tables">
             <div id="additions">

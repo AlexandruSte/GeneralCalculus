@@ -8,15 +8,15 @@ function showTable(id){
     }*/
 
     $.ajax({
-        type : "POST",
-        url : "/results",
+        type : "GET",
+        url : "/dashboard/details",
         data : {
             operation: id
         },
         success: function(data){
             console.log(data);
-            var p = document.getElementById('yes');
-            p.innerHTML = data;
+            var div = document.getElementById('tables');
+            div.innerHTML = data;
             //window.location.href = "/success";
         },
         error : function(e) {
