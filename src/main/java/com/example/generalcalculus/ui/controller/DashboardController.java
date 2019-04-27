@@ -3,6 +3,7 @@ package com.example.generalcalculus.ui.controller;
 import com.example.generalcalculus.models.Score;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,12 +17,12 @@ import java.util.List;
 @RequestMapping(value="/dashboard")
 public class DashboardController {
 
-    @RequestMapping(value="", method = RequestMethod.GET)
+    @GetMapping(value="")
     public String dashboard(){
         return "dashboard";
     }
 
-    @RequestMapping(value="/details", method = RequestMethod.GET)
+    @GetMapping(value="/details")
     public String getResults(@RequestParam(value="operation") String operation,
                              ModelMap modelMap){
 

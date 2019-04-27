@@ -13,12 +13,12 @@ public class CalculController {
     private int correct = 0;
     private int total = 0;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @GetMapping(value = "/")
     public String getIndex(){
         return "calculus";
     }
 
-    @RequestMapping(value = "/results", method = RequestMethod.POST)
+    @PostMapping(value = "/results")
     public String controllerMethod(@RequestParam(value="myArray[]") String[] myArray,
                                    @RequestParam(value="myArray1[]") String[] myArray1){
         int correctValues = 0;
@@ -31,7 +31,7 @@ public class CalculController {
         return "success";
     }
 
-    @RequestMapping(value = "/success", method = RequestMethod.GET)
+    @GetMapping(value = "/success")
     public String success(ModelMap model)
     {
         if(modified){
