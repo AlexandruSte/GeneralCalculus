@@ -10,7 +10,6 @@ body {
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
 }
 
 /* ----- HEADINGS ----- */
@@ -104,4 +103,5 @@ footer {
     font-size: 90%;
     color: white;
     height: 100px;
+    left: 0;
 }

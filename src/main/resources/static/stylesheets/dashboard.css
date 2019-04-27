@@ -1,14 +1,33 @@
+#wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 40px;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-weight: 400;
+}
+
+h3{
+    font-weight: 400;
+    word-spacing: 5px;
+}
+
 /*
     ASIDE css
  */
+
 ul{
     list-style-type: none;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 200px;
 }
 
 li > p{
     padding: 15px 0 15px 0;
     width: 150px;
-    background-color: #f9f9f9;
+    background-color: #f2f2f2;
     text-align: center;
     margin-bottom: 10px;
     margin-top: 0;
@@ -23,19 +42,25 @@ li > p:visited{
 
 li > p:hover,
 li > p:active{
-    border-top: 2px solid #d91f04;
     height: 150%;
     width: 165px;
     font-size: 113%;
 }
 
-#wrapper{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 60px;
-    width: 95%;
-    margin: 0 auto;
-    margin-top: 80px;
+li:first-child > p:hover{
+    border-top: 2px solid #00C853;
+}
+
+li:nth-child(2) > p:hover{
+    border-top: 2px solid #0091EA;
+}
+
+li:nth-child(3) > p:hover{
+    border-top: 2px solid #6200EA;
+}
+
+li:nth-child(4) > p:hover{
+    border-top: 2px solid #D50000;
 }
 
 /*
@@ -45,6 +70,8 @@ table{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    font-size: 105%;
+    margin-bottom: 50px;
 }
 
 td, th {
@@ -52,10 +79,15 @@ td, th {
     padding: 8px;
 }
 
-tr:hover {
-    background-color: #ddd;
+td{
+    text-align: center;
 }
 
 tr:nth-child(even){
     background-color: #f2f2f2;
+}
+
+
+tr:hover {
+    background-color: #ddd;
 }
