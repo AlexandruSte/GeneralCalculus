@@ -20,7 +20,7 @@ public class Score {
         this.time = time;
         this.date = date;
         this.difficulty = difficulty;
-        this.operation = operation;
+        this.operation = operation.substring(0, operation.length() - 1);;
     }
 
     public int getNrOfOperations() {

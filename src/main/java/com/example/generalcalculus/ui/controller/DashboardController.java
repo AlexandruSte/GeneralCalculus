@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -32,11 +31,18 @@ public class DashboardController {
         List<Score> scores = new ArrayList<>();
         scores.add(score);
         scores.add(score);
+        scores.add(score);
+        scores.add(score);
+        scores.add(score);
+        scores.add(score);
+        scores.add(score);
+        scores.add(score);
 
         if(operation.equals("multiplications"))
             scores.add(new Score(20,20,10,LocalDate.of(2019,2,22),"Medium",operation));
 
         modelMap.put("scores",scores);
+        modelMap.put("bestScores",scores);
         return "tableResults";
     }
 }
