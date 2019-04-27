@@ -18,10 +18,10 @@
 </head>
     <jsp:include page="static/navigator.jsp"></jsp:include>
 
-    <form action="/login" method="post">
-        <div><label> User Name : <input type="text" name="username" placeholder="username"/> </label></div>
-        <div><label> Password: <input type="password" name="password" placeholder="password"/> </label></div>
-        <div><input type="submit" value="Login"/></div>
+    <form action="/user/login" method="post">
+        <input type="text" name="username" placeholder="username"/>
+        <input type="password" name="password" placeholder="password"/>
+        <input type="submit" value="Login"/>
     </form>
 
     <!-- <jsp:include page="static/footer.jsp"></jsp:include> -->
