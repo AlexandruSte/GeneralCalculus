@@ -1,5 +1,6 @@
 package com.example.generalcalculus.models;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -11,6 +12,8 @@ public class Score {
     private LocalDate date;
     private String difficulty;
     private String operation;
+    private String avgTime;
+    private String percentage;
 
     public Score(){}
 
@@ -20,7 +23,10 @@ public class Score {
         this.time = time;
         this.date = date;
         this.difficulty = difficulty;
-        this.operation = operation.substring(0, operation.length() - 1);;
+        this.operation = operation.substring(0, operation.length() - 1);
+        avgTime = new DecimalFormat("##.##").format(time/nrOfOperations) + " s";
+        int d = (correctResults*100/nrOfOperations);
+        percentage = d + "%";
     }
 
     public int getNrOfOperations() {
@@ -72,5 +78,13 @@ public class Score {
 
     public void setOperation(String operation) {
         this.operation = operation;
+    }
+
+    public String getAvgTime(){
+        return avgTime;
+    }
+
+    public String getPercentage(){
+        return percentage;
     }
 }

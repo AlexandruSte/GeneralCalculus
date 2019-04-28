@@ -2,6 +2,7 @@ var user_results = [];
 var actual_results = [];
 var calculations = 0;
 var sign = '';
+var nrOfOps = 0;
 
 function start(){
     //aici voi incepe numaratul secundelor
@@ -11,6 +12,8 @@ function start(){
 
     var divGen = document.getElementById("generation");
     divGen.style.visibility = "hidden";
+
+    nrOfOps = document.getElementById("ops").value;
 
     var operation = document.getElementById("operationType").value;
     switch (operation) {
@@ -72,7 +75,7 @@ function send(){
         user_results.push('0');
     else
         user_results.push(result);
-    if(calculations<4) {
+    if(calculations<nrOfOps) {
         generate();
     }
     else{
@@ -83,7 +86,7 @@ function send(){
 
         $.ajax({
             type : "POST",
-            url : "/results",
+            url : "/calculus/results",
             data : {
                 myArray: user_results,
                 myArray1: actual_results
@@ -91,7 +94,7 @@ function send(){
             },
             success: function(data){
                 console.log(data);
-                window.location.href = "/success";
+                window.location.href = "/calculus/success";
             },
             error : function(e) {
                 alert('Error: ' + e);
@@ -102,7 +105,6 @@ function send(){
 }
 
 function enterpressalert(e){
-    console.log(22);
     var code = (e.keyCode ? e.keyCode : e.which);
     if(code == 13) {
         send();

@@ -5,7 +5,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-//@RequestMapping("")
+@RequestMapping(value = "/calculus")
 public class CalculController {
 
 
@@ -13,7 +13,7 @@ public class CalculController {
     private int correct = 0;
     private int total = 0;
 
-    @GetMapping(value = "/")
+    @GetMapping(value = {"/",""})
     public String getIndex(){
         return "calculus";
     }
