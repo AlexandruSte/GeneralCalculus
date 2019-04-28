@@ -42,8 +42,12 @@ public class DashboardController {
         if(operation.equals("multiplications"))
             scores.add(new Score(20,20,10,LocalDate.of(2019,2,22),"Medium",operation));
 
-        modelMap.put("scores",scores);
-        modelMap.put("bestScores",scores);
+        if(operation.equals("subtractions"))
+            modelMap.put("Scores",new ArrayList<Score>());
+        else{
+            modelMap.put("scores",scores);
+            modelMap.put("bestScores",scores);
+        }
         return "tableResults";
     }
 }
