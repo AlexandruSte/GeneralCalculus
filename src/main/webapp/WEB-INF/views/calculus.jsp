@@ -35,6 +35,7 @@
                 <option value="multiplication" selected>Multiplications</option>
                 <option value="division">Divisions</option>
             </select>
+            <input id="ops" type="number" placeholder="Number of operations" />
             <button onclick="start()">Give me some' man</button>
         </div>
     </div>

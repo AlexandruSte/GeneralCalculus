@@ -1,7 +1,7 @@
 #wrapper{
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-gap: 40px;
+    grid-gap: 10px;
     width: 85%;
     margin: 0 auto;
     margin-top: 50px;
@@ -11,6 +11,7 @@
 h3{
     font-weight: 400;
     word-spacing: 5px;
+    margin-left: 2%;
 }
 
 /*
@@ -22,6 +23,7 @@ ul{
     position: sticky;
     position: -webkit-sticky;
     top: 200px;
+    padding-top: 13%;
 }
 
 li > p{
@@ -66,6 +68,11 @@ li:nth-child(4) > p:hover{
 /*
     TABLE css
  */
+
+#tables {
+    margin-right: 14%;
+}
+
 table{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;

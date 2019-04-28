@@ -12,8 +12,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-    <link rel="stylesheet" href="/resources/stylesheets/global.css" type="text/css"></link>
-    <link rel="stylesheet" href="/resources/stylesheets/success.css" type="text/css"></link>
+    <link rel="stylesheet" href="/resources/css/global.css" type="text/css"></link>
+    <link rel="stylesheet" href="/resources/css/success.css" type="text/css"></link>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
     <title>Results</title>
 </head>
