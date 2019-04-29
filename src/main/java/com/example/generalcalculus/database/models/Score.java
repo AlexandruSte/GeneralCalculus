@@ -1,11 +1,19 @@
-package com.example.generalcalculus.models;
+package com.example.generalcalculus.database.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import javax.persistence.*;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
+@Entity
+@Table(name = "score")
 public class Score {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private int nrOfOperations;
     private int correctResults;
     private double time;
@@ -86,5 +94,21 @@ public class Score {
 
     public String getPercentage(){
         return percentage;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setAvgTime(String avgTime) {
+        this.avgTime = avgTime;
+    }
+
+    public void setPercentage(String percentage) {
+        this.percentage = percentage;
     }
 }
