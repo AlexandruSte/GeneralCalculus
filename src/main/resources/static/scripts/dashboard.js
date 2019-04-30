@@ -12,20 +12,20 @@ function showTable(id){
 
             switch (id) {
                 case "additions":
-                    $( "tr:first" ).css( "background-color", "#00C853" );
-                    $("#second-table tr").eq(0).css("background-color", "#00C853");
+                    $( "tr:first" ).css( "background-color", "#26A69A" );
+                    $("#second-table tr").eq(0).css("background-color", "#26A69A");
                     break;
                 case "multiplications":
-                    $( "tr:first" ).css( "background-color", "#0091EA" );
-                    $("#second-table tr").eq(0).css("background-color", "#0091EA");
+                    $( "tr:first" ).css( "background-color", "#4CAF50" );
+                    $("#second-table tr").eq(0).css("background-color", "#4CAF50");
                     break;
                 case "subtractions":
-                    $( "tr:first" ).css( "background-color", "#6200EA" );
-                    $("#second-table tr").eq(0).css("background-color", "#6200EA");
+                    $( "tr:first" ).css( "background-color", "#FF3D00" );
+                    $("#second-table tr").eq(0).css("background-color", "#FF3D00");
                     break;
                 case "divisions":
-                    $( "tr:first" ).css( "background-color", "#D50000" );
-                    $("#second-table tr").eq(0).css("background-color", "#D50000");
+                    $( "tr:first" ).css( "background-color", "#FFC107" );
+                    $("#second-table tr").eq(0).css("background-color", "#FFC107");
                     break;
             }
 
