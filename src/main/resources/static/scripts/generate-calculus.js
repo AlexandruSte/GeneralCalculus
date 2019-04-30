@@ -3,6 +3,7 @@ var actual_results = [];
 var calculations = 0;
 var sign = '';
 var nrOfOps = 0;
+var operation = "";
 
 function start(){
     //aici voi incepe numaratul secundelor
@@ -15,7 +16,7 @@ function start(){
 
     nrOfOps = document.getElementById("ops").value;
 
-    var operation = document.getElementById("operationType").value;
+    operation = document.getElementById("operationType").value;
     switch (operation) {
         case "multiplication":
             sign = 'x';
@@ -89,7 +90,8 @@ function send(){
             url : "/calculus/results",
             data : {
                 myArray: user_results,
-                myArray1: actual_results
+                myArray1: actual_results,
+                operations: operation
                 //trebuie sa adaug float cu nr de secunde
             },
             success: function(data){
