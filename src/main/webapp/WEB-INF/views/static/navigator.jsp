@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Alexandru
@@ -6,10 +7,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <header>
-    <a href="/"><img id="logo" src="/resources/img/logo.png" alt="logo"/></a>
+    <img id="logo" src="/resources/img/logo.png" alt="logo" onclick="logo_click()" />
 
-    <nav>
-        <a href="#">Login</a>
-        <a href="#">Sign up</a>
-    </nav>
+    <% if (session.getAttribute("user") == null) { %>
+        <nav>
+            <a href="/login">Login</a>
+            <a href="/register">Sign up</a>
+        </nav>
+    <% }
+    else {%>
+        <nav>
+            <a href="/calculus">Calculus</a>
+            <a href="/dashboard">Dashboard</a>
+        </nav>
+    <% } %>
+
 </header>
