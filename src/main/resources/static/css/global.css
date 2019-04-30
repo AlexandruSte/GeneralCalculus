@@ -45,7 +45,6 @@ h3 {
 h2:after {
     display: block;
     height: 2px;
-    background-color: #e67e22;
     content: " ";
     width: 100px;
     margin: 0 auto;
@@ -88,8 +87,14 @@ nav a:active {
     border-bottom: 2px solid #19af92;
 }
 
-#logo{
-    width: 43%;
+#logo {
+    width: 270px;
+    height: 95%;
+}
+
+#logo:hover,
+#logo:active{
+    cursor: pointer;
 }
 
 /********************************************

@@ -1,7 +1,7 @@
 #wrapper{
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 10px;
+    grid-template-columns: 20% 64%;
+    grid-gap: 140px;
     width: 85%;
     margin: 0 auto;
     margin-top: 50px;
@@ -50,19 +50,19 @@ li > p:active{
 }
 
 li:first-child > p:hover{
-    border-top: 2px solid #00C853;
+    border-top: 2px solid #26A69A;
 }
 
 li:nth-child(2) > p:hover{
-    border-top: 2px solid #0091EA;
+    border-top: 2px solid #4CAF50;
 }
 
 li:nth-child(3) > p:hover{
-    border-top: 2px solid #6200EA;
+    border-top: 2px solid #FF3D00;
 }
 
 li:nth-child(4) > p:hover{
-    border-top: 2px solid #D50000;
+    border-top: 2px solid #FFC107;
 }
 
 /*
