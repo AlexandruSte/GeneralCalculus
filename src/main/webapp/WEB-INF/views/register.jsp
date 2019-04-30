@@ -26,7 +26,7 @@
     </c:if>
 
     <form action="/register" method="post">
-        <input type="text" name="username" placeholder="Username"/>
+        <input type="text" name="username" placeholder="Username" autofocus/>
         <input type="password" name="password" placeholder="Password"/>
         <input type="password" name="cpassword" placeholder="Confirm password"/>
         <input type="submit" value="Sign up"/>
