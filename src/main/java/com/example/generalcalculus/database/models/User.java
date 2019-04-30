@@ -20,10 +20,6 @@ public class User {
     @Transient
     private String passwordConfirm;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JsonManagedReference
-    private List<Score> score = new ArrayList<>();
-
     public Long getId() {
         return id;
     }
@@ -54,13 +50,5 @@ public class User {
 
     public void setPasswordConfirm(String passwordConfirm) {
         this.passwordConfirm = passwordConfirm;
-    }
-
-    public List<Score> getScore() {
-        return score;
-    }
-
-    public void setScore(List<Score> score) {
-        this.score = score;
     }
 }

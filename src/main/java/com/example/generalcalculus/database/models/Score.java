@@ -1,6 +1,7 @@
 package com.example.generalcalculus.database.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.text.DecimalFormat;
@@ -23,15 +24,21 @@ public class Score {
     private String avgTime;
     private String percentage;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user", nullable = false)
+    @JsonIgnore
+    private User user;
+
     public Score(){}
 
-    public Score(int nrOfOperations, int correctResults, double time, LocalDate date, String difficulty,String operation) {
+    public Score(int nrOfOperations, int correctResults, double time, LocalDate date, String difficulty,String operation, User user) {
+        this.user = user;
         this.nrOfOperations = nrOfOperations;
         this.correctResults = correctResults;
         this.time = time;
         this.date = date;
         this.difficulty = difficulty;
-        this.operation = operation.substring(0, operation.length() - 1);
+        this.operation = operation;
         avgTime = new DecimalFormat("##.##").format(time/nrOfOperations) + " s";
         int d = (correctResults*100/nrOfOperations);
         percentage = d + "%";
@@ -110,5 +117,13 @@ public class Score {
 
     public void setPercentage(String percentage) {
         this.percentage = percentage;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
