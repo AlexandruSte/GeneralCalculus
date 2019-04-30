@@ -1,4 +1,5 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.example.generalcalculus.database.models.User" %><%--
   Created by IntelliJ IDEA.
   User: Alexandru
   Date: 30.04.2019
@@ -9,17 +10,26 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    
+
     <link rel="stylesheet" href="/resources/css/global.css" type="text/css"></link>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/resources/scripts/general.js"></script>
 
     <title>General Calculus</title>
 </head>
 <body>
     <jsp:include page="static/navigator.jsp"></jsp:include>
 
-    <h2>Welcome to the official application</h2>
+    <% if (session.getAttribute("user") != null) {  %>
+        <h2>Welcome to the official application <c:out value="${sessionScope.user.username}"/></h2>
+    <% } %>
+
+    <p>Ooooooo, you're the user I've heard so much about, user ${id}</p>
+
+    <p>Be careful tho, because this session is only active for  ${time} seconds</p>
+
+    <p>And you only have left ${active} seconds</p>
 </body>
 </html>
