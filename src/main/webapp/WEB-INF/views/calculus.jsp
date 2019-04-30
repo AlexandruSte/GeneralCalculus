@@ -9,8 +9,8 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="/resources/stylesheets/calculus.css" type="text/css"></link>
-    <link rel="stylesheet" href="/resources/stylesheets/global.css" type="text/css"></link>
+    <link rel="stylesheet" href="/resources/css/global.css" type="text/css"></link>
+    <link rel="stylesheet" href="/resources/css/global.css" type="text/css"></link>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
