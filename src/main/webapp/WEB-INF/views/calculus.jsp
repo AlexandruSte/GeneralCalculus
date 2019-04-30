@@ -30,6 +30,11 @@
         </div>
 
         <div id="generation">
+            <select id="difficultyType">
+                <option value="novice">Novice</option>
+                <option value="medior">Medior</option>
+                <option value="expert" selected>Expert</option>
+            </select>
             <select id="operationType">
                 <option value="addition">Additions</option>
                 <option value="subtraction">Subtractions</option>

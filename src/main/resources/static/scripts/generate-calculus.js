@@ -4,9 +4,12 @@ var calculations = 0;
 var sign = '';
 var nrOfOps = 0;
 var operation = "";
+var difficulty = "";
+
+var startTime = 0;
 
 function start(){
-    //aici voi incepe numaratul secundelor
+    startTime = performance.now();
 
     var div = document.getElementById("calculus");
     div.style.visibility = "visible";
@@ -17,6 +20,9 @@ function start(){
     nrOfOps = document.getElementById("ops").value;
 
     operation = document.getElementById("operationType").value;
+
+    difficulty = document.getElementById("difficultyType").value;
+
     switch (operation) {
         case "multiplication":
             sign = 'x';
@@ -80,8 +86,11 @@ function send(){
         generate();
     }
     else{
-        //trebuie sa opresc timerul
+        var endTime = performance.now();
 
+        var seconds = Math.round(((endTime - startTime)/1000) * 100) / 100;
+        console.log(seconds);
+        console.log(typeof seconds);
         div = document.getElementById("calculus");
         div.style.visibility = "hidden";
 
@@ -91,7 +100,9 @@ function send(){
             data : {
                 myArray: user_results,
                 myArray1: actual_results,
-                operations: operation
+                operations: operation,
+                time: seconds,
+                difficulty: difficulty
                 //trebuie sa adaug float cu nr de secunde
             },
             success: function(data){

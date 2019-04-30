@@ -36,6 +36,8 @@ public class CalculController {
     public String controllerMethod(@RequestParam(value="myArray[]") String[] myArray,
                                    @RequestParam(value="myArray1[]") String[] myArray1,
                                    @RequestParam(value="operations") String operation,
+                                   @RequestParam(value="time") Double time,
+                                   @RequestParam(value="difficulty") String difficulty,
                                    HttpSession session){
         int correctValues = 0;
         for(int i=0; i<myArray.length;i++)
@@ -45,7 +47,7 @@ public class CalculController {
         total = myArray.length;
         modified = true;
 
-        Score score = new Score(total,correct,0,LocalDate.now(),"medium",operation,(User)session.getAttribute("user"));
+        Score score = new Score(total,correct,time,LocalDate.now(),difficulty,operation,(User)session.getAttribute("user"));
 
         scoreRepository.save(score);
 
