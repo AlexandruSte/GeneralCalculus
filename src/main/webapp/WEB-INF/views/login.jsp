@@ -15,16 +15,20 @@
     <link rel="stylesheet" href="/resources/css/login.css" type="text/css"></link>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
 
+    <script src="/resources/scripts/general.js"></script>
+
     <title>Login</title>
 </head>
     <jsp:include page="static/navigator.jsp"></jsp:include>
 
-    <form action="<c:url value='j_spring_security_check' />" method="post">
+    <c:if test="${not empty error}">
+        <p id="register-error" style="text-align: center;color: red;">${error}</p>
+    </c:if>
+
+    <form action="/login" method="post">
         <input type="text" name="username" placeholder="username"/>
         <input type="password" name="password" placeholder="password"/>
         <input type="submit" value="Login"/>
-        <input type="hidden" name="${_csrf.parameterName}"
-               value="${_csrf.token}" />
     </form>
 
     <!-- <jsp:include page="static/footer.jsp"></jsp:include> -->
