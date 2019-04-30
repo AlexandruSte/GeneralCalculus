@@ -12,6 +12,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="/resources/scripts/dashboard.js"></script>
+    <script src="/resources/scripts/general.js"></script>
 
     <link rel="stylesheet" href="/resources/css/global.css" type="text/css"></link>
     <link rel="stylesheet" href="/resources/css/dashboard.css" type="text/css"></link>
