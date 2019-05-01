@@ -16,6 +16,8 @@
     <title>Calculus</title>
 </head>
 
+<jsp:include page="static/above-line.jsp"></jsp:include>
+
 <body>
     <jsp:include page="static/navigator.jsp"></jsp:include>
     <div class="calcule">

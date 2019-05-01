@@ -15,6 +15,10 @@
 
     <title>Login</title>
 </head>
+
+<jsp:include page="static/above-line.jsp"></jsp:include>
+
+<body>
     <jsp:include page="static/navigator.jsp"></jsp:include>
 
     <c:if test="${not empty error}">
@@ -29,5 +33,5 @@
     </form>
 
     <!-- <jsp:include page="static/footer.jsp"></jsp:include> -->
-<body>
+</body>
 </html>
