@@ -17,6 +17,14 @@ body{
     margin: 0 auto;
 }
 
+#above-body{
+    border-top: 3px solid #607D8B;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+}
+
 /* ----- HEADINGS ----- */
 h1,
 h2,
@@ -62,7 +70,7 @@ h2:after {
 header {
     display: flex;
     justify-content: left;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
     padding-top: 0.5%;
     height: 120px;
 }
