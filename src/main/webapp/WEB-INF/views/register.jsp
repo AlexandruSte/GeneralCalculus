@@ -9,13 +9,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <jsp:include page="static/includes.jsp"></jsp:include>
 
-    <link rel="stylesheet" href="/resources/css/global.css" type="text/css"></link>
     <link rel="stylesheet" href="/resources/css/login.css" type="text/css"></link>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
-
-    <script src="/resources/scripts/general.js"></script>
 
     <title>Login</title>
 </head>

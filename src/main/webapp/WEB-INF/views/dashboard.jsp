@@ -8,15 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <jsp:include page="static/includes.jsp"></jsp:include>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="/resources/scripts/dashboard.js"></script>
-    <script src="/resources/scripts/general.js"></script>
 
-    <link rel="stylesheet" href="/resources/css/global.css" type="text/css"></link>
     <link rel="stylesheet" href="/resources/css/dashboard.css" type="text/css"></link>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
 
     <title>Dashboard</title>
 </head>
