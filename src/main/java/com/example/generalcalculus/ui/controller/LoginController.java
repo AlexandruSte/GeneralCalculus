@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import javax.jws.WebParam;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -33,10 +34,12 @@ public class LoginController {
 
         if(user == null){
             modelMap.put("error","Nume de utilizator inexistent.");
-            return "register";
+            return "login";
         }
 
         session.setAttribute("user",user);
+
+        checkSession(session);
 
         return "redirect:/";
     }
@@ -50,12 +53,13 @@ public class LoginController {
     public String registerP(@RequestParam(value="username") String username,
                             @RequestParam(value="password") String password,
                             @RequestParam(value="cpassword") String confirmation,
-                            ModelMap modelMap){
+                            ModelMap modelMap,
+                            HttpSession session){
 
         User user = userRepository.findByUsername(username);
 
         if(user != null){
-            modelMap.put("error","Acest nume de utilizator este indisponibil.");
+            modelMap.put("error","Acest nume de utilizator exista deja.");
             return "register";
         }
 
@@ -69,6 +73,28 @@ public class LoginController {
         user.setUsername(username);
         userRepository.save(user);
 
+        session.setAttribute("acccreated","Your account has been created! You may login now.");
+
+        checkSession(session);
+
+        return "index";
+    }
+
+    @GetMapping(value = "/logout")
+    public String logout(HttpSession session,
+                         ModelMap modelMap){
+
+        session.removeAttribute("user");
+        checkSession(session);
+        session.setAttribute("logout","You have been logged out of the application.");
         return "redirect:/";
+    }
+
+    private void checkSession(HttpSession session){
+        if(session.getAttribute("acccreated") != null)
+            session.removeAttribute("acccreated");
+
+        if(session.getAttribute("logout") != null)
+            session.removeAttribute("logout");
     }
 }

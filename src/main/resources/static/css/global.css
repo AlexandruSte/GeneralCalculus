@@ -12,6 +12,11 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+body{
+    width: 85%;
+    margin: 0 auto;
+}
+
 /* ----- HEADINGS ----- */
 h1,
 h2,
@@ -57,7 +62,6 @@ h2:after {
 header {
     display: flex;
     justify-content: left;
-    width: 85%;
     margin: 0 auto;
     padding-top: 0.5%;
     height: 120px;
