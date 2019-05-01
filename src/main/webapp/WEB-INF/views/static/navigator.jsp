@@ -19,6 +19,7 @@
         <nav>
             <a href="/calculus">Calculus</a>
             <a href="/dashboard">Dashboard</a>
+            <a href="/progress">Progress</a>
             <a href="/logout">Log out</a>
         </nav>
     <% } %>
