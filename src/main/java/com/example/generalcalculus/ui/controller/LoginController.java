@@ -20,7 +20,11 @@ public class LoginController {
     UserRepository userRepository;
 
     @GetMapping(value="/login")
-    public String login(){
+    public String login(HttpSession session){
+
+        if(session.getAttribute("user")!=null)
+            return "redirect:/";
+
         return "login";
     }
 
@@ -45,7 +49,11 @@ public class LoginController {
     }
 
     @GetMapping(value="/register")
-    public String register(){
+    public String register(HttpSession session){
+
+        if(session.getAttribute("user")!=null)
+            return "redirect:/";
+
         return "register";
     }
 

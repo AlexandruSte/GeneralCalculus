@@ -53,6 +53,7 @@ h2 {
 h3 {
     font-size: 110%;
     margin-bottom: 15px;
+    font-weight: 400;
 }
 
 h2:after {

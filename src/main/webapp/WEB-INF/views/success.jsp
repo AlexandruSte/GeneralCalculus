@@ -30,11 +30,12 @@
         </c:when>
         <c:otherwise>
             <p>Hol' up...</p>
+            <p>You will be sent here after you complete some calculus, not on your on peace of mind.</p>
             <br />
         </c:otherwise>
     </c:choose>
 
-    <p>Let's go back and resolve some more!<a href="/">Go</a></p>
+    <p>Let's go back and resolve some more!   <a href="/calculus/">Go</a></p>
 
     <jsp:include page="static/footer.jsp"></jsp:include>
 </body>
