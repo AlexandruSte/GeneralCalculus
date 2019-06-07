@@ -13,9 +13,6 @@ public class HomeController {
 
     @GetMapping(value = {"/", ""})
     public String index(HttpSession session, ModelMap modelMap){
-        modelMap.put("id",session.getId());
-        modelMap.put("time",session.getMaxInactiveInterval());
-        modelMap.put("active",session.getCreationTime());
         return "index";
     }
 }

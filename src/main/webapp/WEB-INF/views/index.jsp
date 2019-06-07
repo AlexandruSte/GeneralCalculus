@@ -31,10 +31,6 @@
         <p> <c:out value="${sessionScope.logout}"/> </p>
     <% } %>
 
-    <p>Ooooooo, you're the user I've heard so much about, user ${id}</p>
-
-    <p>Be careful tho, because this session is only active for  ${time} seconds</p>
-
-    <p>And you only have left ${active} seconds</p>
+    
 </body>
 </html>
