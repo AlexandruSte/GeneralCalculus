@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 @Controller
@@ -34,13 +31,13 @@ public class DashboardController {
                              HttpSession session){
 
         operation = operation.substring(0,operation.length()-1);
-        List<Score> scores = new ArrayList<>();
+        List<Score> scores;
         User user = (User)session.getAttribute("user");
-        scores = scoreRepository.findByUserAndOperation(user,operation);
+        scores = scoreRepository.findByUserAndOperationOrderByDateDesc(user, operation);
         modelMap.put("scores",scores);
 
 
-        scores = scoreRepository.findFirst10ByUserAndOperationOrderByAvgTimeDesc(user,operation);
+        scores = scoreRepository.findFirst10ByUserAndOperationOrderByAvgTime(user, operation);
         modelMap.put("bestScores",scores);
 
         return "tableResults";

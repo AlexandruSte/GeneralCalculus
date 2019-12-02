@@ -7,7 +7,10 @@ import com.example.generalcalculus.database.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
@@ -20,6 +23,7 @@ public class CalculController {
     private boolean modified = false;
     private int correct = 0;
     private int total = 0;
+    private String[] answers;
 
     @Autowired
     UserRepository userRepository;
@@ -27,27 +31,30 @@ public class CalculController {
     @Autowired
     ScoreRepository scoreRepository;
 
-    @GetMapping(value = {"/",""})
-    public String getIndex(){
+    @GetMapping(value = {"/", ""})
+    public String getIndex() {
         return "calculus";
     }
 
     @PostMapping(value = "/results")
-    public String controllerMethod(@RequestParam(value="myArray[]") String[] myArray,
-                                   @RequestParam(value="myArray1[]") String[] myArray1,
-                                   @RequestParam(value="operations") String operation,
-                                   @RequestParam(value="time") Double time,
-                                   @RequestParam(value="difficulty") String difficulty,
-                                   HttpSession session){
+    public String controllerMethod(@RequestParam(value = "myArray[]") String[] myArray,
+                                   @RequestParam(value = "myArray1[]") String[] myArray1,
+                                   @RequestParam(value = "operations") String operation,
+                                   @RequestParam(value = "time") Double time,
+                                   @RequestParam(value = "difficulty") String difficulty,
+                                   HttpSession session) {
         int correctValues = 0;
-        for(int i=0; i<myArray.length;i++)
-            if(myArray[i].equals(myArray1[i]))
+        answers = new String[myArray.length];
+        for (int i = 0; i < myArray.length; i++) {
+            answers[i] = String.format("%s:%s", myArray[i], myArray1[i]);
+            if (myArray[i].equals(myArray1[i]))
                 correctValues++;
+        }
         correct = correctValues;
         total = myArray.length;
         modified = true;
 
-        Score score = new Score(total,correct,time,LocalDate.now(),difficulty,operation,(User)session.getAttribute("user"));
+        Score score = new Score(total, correct, time, LocalDate.now(), difficulty, operation, (User) session.getAttribute("user"));
 
         scoreRepository.save(score);
 
@@ -55,15 +62,14 @@ public class CalculController {
     }
 
     @GetMapping(value = "/success")
-    public String success(ModelMap model)
-    {
-        if(modified){
-            model.addAttribute("correct",correct);
-            model.addAttribute("responses",total);
-            model.addAttribute("ok","1");
-        }
-        else{
-            model.addAttribute("ok","0");
+    public String success(ModelMap model) {
+        if (modified) {
+            model.addAttribute("correct", correct);
+            model.addAttribute("responses", total);
+            model.addAttribute("answers", answers);
+            model.addAttribute("ok", "1");
+        } else {
+            model.addAttribute("ok", "0");
         }
         modified = false;
         return "success";

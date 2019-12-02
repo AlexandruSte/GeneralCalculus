@@ -11,7 +11,7 @@ import java.util.List;
 public interface ScoreRepository extends JpaRepository<Score, Long> {
     List<Score> findByUser(User id);
 
-    List<Score> findByUserAndOperation(User user, String operation);
+    List<Score> findFirst10ByUserAndOperationOrderByAvgTime(User user, String operation);
 
-    List<Score> findFirst10ByUserAndOperationOrderByAvgTimeDesc(User user, String operation);
+    List<Score> findByUserAndOperationOrderByDateDesc(User user, String operation);
 }
